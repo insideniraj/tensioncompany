@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Funding - Tension Company</title>
+    <meta name="description" content="Apply for funding from Tension Company. Submit your startup details, pitch deck, and video to get started on your funding journey.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased bg-gray-900 text-gray-200 font-sans">
+    <div id="funding-form-container" class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="w-full z-50 bg-black bg-opacity-80 backdrop-blur-md border-b border-gray-800 p-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex justify-between h-20 items-center">
+                    <a href="INDEX.HTML" class="flex items-center">
+                        <div class="flex-shrink-0 flex items-center">
+                            <div class="h-14 w-14 rounded-full logo-container flex items-center justify-center mr-3">
+                                <img src="logo.png" alt="Tension Company Logo" class="h-14 w-14 logo-image">
+                            </div>
+                            <span class="text-white font-bold text-xl">Tension<span class="gradient-text">Company</span></span>
+                        </div>
+                    </a>
+                    <div class="hidden md:block">
+                        <a href="INDEX.HTML" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                            <i class="fas fa-arrow-left mr-2"></i>Back to Main Site
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Form Content -->
+        <main class="flex-grow">
+            <div class="form-container pt-20">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <!-- Notice Bar -->
+                    <div class="bg-blue-900/50 border border-blue-400 rounded-lg p-4 text-center mb-12">
+                        <p class="text-blue-200 text-base">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            <span class="font-bold">Notice:</span> The direct submission form is currently under maintenance. For now, please <a href="mailto:tensioncompany@yahoo.com" class="font-bold underline hover:text-white">email your application and documents directly</a> for funding consideration.
+                        </p>
+                    </div>
+
+                    <!-- Header -->
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                            <span class="gradient-text">Apply for Funding</span>
+                        </h1>
+                        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                            Tell us about your startup and vision. We're excited to learn about the next big thing you're building.
+                        </p>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="mb-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="step-indicator active" id="step1-indicator">1</div>
+                            <div class="flex-1 h-1 bg-gray-700 mx-4">
+                                <div class="progress-bar" id="progress-bar" style="width: 25%"></div>
+                            </div>
+                            <div class="step-indicator pending" id="step2-indicator">2</div>
+                            <div class="flex-1 h-1 bg-gray-700 mx-4">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                            <div class="step-indicator pending" id="step3-indicator">3</div>
+                            <div class="flex-1 h-1 bg-gray-700 mx-4">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                            <div class="step-indicator pending" id="step4-indicator">4</div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-400">
+                            <span>Company Info</span>
+                            <span>Business Details</span>
+                            <span>Documents</span>
+                            <span>Review & Submit</span>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <form id="funding-form" action="https://formspree.io/f/mdkzlppk" method="POST" enctype="multipart/form-data" class="form-card p-8 md:p-12">
+                        <!-- Step 1: Company Information -->
+                        <div id="step1" class="step-content">
+                            <h2 class="text-2xl font-bold text-white mb-6">Company Information</h2>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="companyName" class="form-label">Company Name *</label>
+                                    <input type="text" id="companyName" name="companyName" required class="form-input w-full px-4 py-3">
+                                </div>
+                                <div>
+                                    <label for="website" class="form-label">Website</label>
+                                    <input type="url" id="website" name="website" class="form-input w-full px-4 py-3" placeholder="https://yourcompany.com">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="industry" class="form-label">Industry/Sector *</label>
+                                    <select id="industry" name="industry" required class="form-input w-full px-4 py-3">
+                                        <option value="">Select Industry</option>
+                                        <option value="ai-ml">Artificial Intelligence & Machine Learning</option>
+                                        <option value="biotech">Biotechnology & Healthcare</option>
+                                        <option value="clean-energy">Clean Energy & Climate Tech</option>
+                                        <option value="fintech">Financial Technology</option>
+                                        <option value="robotics">Robotics & Automation</option>
+                                        <option value="software">Software & SaaS</option>
+                                        <option value="hardware">Hardware & IoT</option>
+                                        <option value="ecommerce">E-commerce & Retail</option>
+                                        <option value="education">Education Technology</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="foundedYear" class="form-label">Founded Year *</label>
+                                    <input type="number" id="foundedYear" name="foundedYear" min="1990" max="2024" required class="form-input w-full px-4 py-3">
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="companyDescription" class="form-label">Company Description *</label>
+                                <textarea id="companyDescription" name="companyDescription" rows="4" required class="form-input w-full px-4 py-3" placeholder="Describe your company, mission, and what you do in 2-3 sentences..."></textarea>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="fundingAmount" class="form-label">Funding Amount Requested *</label>
+                                    <select id="fundingAmount" name="fundingAmount" required class="form-input w-full px-4 py-3">
+                                        <option value="">Select Amount</option>
+                                        <option value="500k-1m">$500K - $1M</option>
+                                        <option value="1m-5m">$1M - $5M</option>
+                                        <option value="5m-10m">$5M - $10M</option>
+                                        <option value="10m-25m">$10M - $25M</option>
+                                        <option value="25m-50m">$25M - $50M</option>
+                                        <option value="50m+">$50M+</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="fundingStage" class="form-label">Funding Stage *</label>
+                                    <select id="fundingStage" name="fundingStage" required class="form-input w-full px-4 py-3">
+                                        <option value="">Select Stage</option>
+                                        <option value="seed">Seed</option>
+                                        <option value="series-a">Series A</option>
+                                        <option value="series-b">Series B</option>
+                                        <option value="series-c">Series C</option>
+                                        <option value="growth">Growth</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end">
+                                <button type="button" onclick="nextStep()" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 rounded-lg text-white font-semibold transition duration-300">
+                                    Next Step <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Business Details -->
+                        <div id="step2" class="step-content hidden">
+                            <h2 class="text-2xl font-bold text-white mb-6">Business Details</h2>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="teamSize" class="form-label">Team Size *</label>
+                                    <select id="teamSize" name="teamSize" required class="form-input w-full px-4 py-3">
+                                        <option value="">Select Team Size</option>
+                                        <option value="1-5">1-5 employees</option>
+                                        <option value="6-10">6-10 employees</option>
+                                        <option value="11-25">11-25 employees</option>
+                                        <option value="26-50">26-50 employees</option>
+                                        <option value="51-100">51-100 employees</option>
+                                        <option value="100+">100+ employees</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="revenue" class="form-label">Annual Revenue</label>
+                                    <select id="revenue" name="revenue" class="form-input w-full px-4 py-3">
+                                        <option value="">Select Revenue Range</option>
+                                        <option value="0">Pre-revenue</option>
+                                        <option value="1k-10k">$1K - $10K</option>
+                                        <option value="10k-100k">$10K - $100K</option>
+                                        <option value="100k-1m">$100K - $1M</option>
+                                        <option value="1m-10m">$1M - $10M</option>
+                                        <option value="10m+">$10M+</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="customers" class="form-label">Number of Customers</label>
+                                    <input type="number" id="customers" name="customers" min="0" class="form-input w-full px-4 py-3" placeholder="e.g., 100">
+                                </div>
+                                <div>
+                                    <label for="valuation" class="form-label">Current Valuation (if applicable)</label>
+                                    <input type="text" id="valuation" name="valuation" class="form-input w-full px-4 py-3" placeholder="e.g., $5M">
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="problem" class="form-label">Problem You're Solving *</label>
+                                <textarea id="problem" name="problem" rows="3" required class="form-input w-full px-4 py-3" placeholder="Describe the problem your product/service solves..."></textarea>
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="solution" class="form-label">Your Solution *</label>
+                                <textarea id="solution" name="solution" rows="3" required class="form-input w-full px-4 py-3" placeholder="Describe your solution and how it works..."></textarea>
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="marketSize" class="form-label">Market Size & Opportunity *</label>
+                                <textarea id="marketSize" name="marketSize" rows="3" required class="form-input w-full px-4 py-3" placeholder="Describe your target market size and opportunity..."></textarea>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="competitors" class="form-label">Key Competitors</label>
+                                    <textarea id="competitors" name="competitors" rows="3" class="form-input w-full px-4 py-3" placeholder="List your main competitors..."></textarea>
+                                </div>
+                                <div>
+                                    <label for="competitiveAdvantage" class="form-label">Competitive Advantage</label>
+                                    <textarea id="competitiveAdvantage" name="competitiveAdvantage" rows="3" class="form-input w-full px-4 py-3" placeholder="What makes you different?"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <button type="button" onclick="prevStep()" class="px-8 py-3 bg-gray-600 hover:bg-gray-700 rounded-lg text-white font-semibold transition duration-300">
+                                    <i class="fas fa-arrow-left mr-2"></i>Previous
+                                </button>
+                                <button type="button" onclick="nextStep()" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 rounded-lg text-white font-semibold transition duration-300">
+                                    Next Step <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Documents & Media -->
+                        <div id="step3" class="step-content hidden">
+                            <h2 class="text-2xl font-bold text-white mb-6">Documents & Media</h2>
+                            
+                            <div class="mb-8">
+                                <label class="form-label">Pitch Deck *</label>
+                                <div class="file-upload-area" id="pitchDeckUpload">
+                                    <input type="file" id="pitchDeck" name="pitchDeck" accept=".pdf,.ppt,.pptx" class="hidden" required>
+                                    <div class="text-center">
+                                        <i class="fas fa-file-pdf text-4xl text-purple-500 mb-4"></i>
+                                        <p class="text-lg font-semibold text-white mb-2">Upload Your Pitch Deck</p>
+                                        <p class="text-gray-400 mb-4">PDF, PPT, or PPTX format (max 20MB)</p>
+                                        <button type="button" onclick="document.getElementById('pitchDeck').click()" class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition duration-300">
+                                            Choose File
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="pitchDeckStatus" class="mt-2 text-sm hidden"></div>
+                            </div>
+
+                            <div class="mb-8">
+                                <label class="form-label">Pitch Video (5-6 minutes) *</label>
+                                <div class="file-upload-area" id="pitchVideoUpload">
+                                    <input type="file" id="pitchVideo" name="pitchVideo" accept="video/*" class="hidden" required>
+                                    <div class="text-center">
+                                        <i class="fas fa-video text-4xl text-blue-500 mb-4"></i>
+                                        <p class="text-lg font-semibold text-white mb-2">Upload Your Pitch Video</p>
+                                        <p class="text-gray-400 mb-4">MP4, MOV, or AVI format (max 500MB)</p>
+                                        <button type="button" onclick="document.getElementById('pitchVideo').click()" class="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium transition duration-300">
+                                            Choose File
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="pitchVideoStatus" class="mt-2 text-sm hidden"></div>
+                            </div>
+
+                            <div class="mb-8">
+                                <label class="form-label">Financial Model (Optional)</label>
+                                <div class="file-upload-area" id="financialModelUpload">
+                                    <input type="file" id="financialModel" name="financialModel" accept=".xlsx,.xls,.csv" class="hidden">
+                                    <div class="text-center">
+                                        <i class="fas fa-chart-line text-4xl text-green-500 mb-4"></i>
+                                        <p class="text-lg font-semibold text-white mb-2">Upload Financial Model</p>
+                                        <p class="text-gray-400 mb-4">Excel or CSV format (max 10MB)</p>
+                                        <button type="button" onclick="document.getElementById('financialModel').click()" class="px-6 py-2 bg-green-600 hover:bg-green-700 rounded-lg text-white font-medium transition duration-300">
+                                            Choose File
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="financialModelStatus" class="mt-2 text-sm hidden"></div>
+                            </div>
+
+                            <div class="mb-8">
+                                <label class="form-label">Additional Documents (Optional)</label>
+                                <div class="file-upload-area" id="additionalDocsUpload">
+                                    <input type="file" id="additionalDocs" name="additionalDocs" multiple class="hidden">
+                                    <div class="text-center">
+                                        <i class="fas fa-folder-open text-4xl text-yellow-500 mb-4"></i>
+                                        <p class="text-lg font-semibold text-white mb-2">Upload Additional Documents</p>
+                                        <p class="text-gray-400 mb-4">Any additional supporting documents</p>
+                                        <button type="button" onclick="document.getElementById('additionalDocs').click()" class="px-6 py-2 bg-yellow-600 hover:bg-yellow-700 rounded-lg text-white font-medium transition duration-300">
+                                            Choose Files
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="additionalDocsStatus" class="mt-2 text-sm hidden"></div>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <button type="button" onclick="prevStep()" class="px-8 py-3 bg-gray-600 hover:bg-gray-700 rounded-lg text-white font-semibold transition duration-300">
+                                    <i class="fas fa-arrow-left mr-2"></i>Previous
+                                </button>
+                                <button type="button" onclick="nextStep()" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 rounded-lg text-white font-semibold transition duration-300">
+                                    Next Step <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Founder Information & Review -->
+                        <div id="step4" class="step-content hidden">
+                            <h2 class="text-2xl font-bold text-white mb-6">Founder Information & Review</h2>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="founderName" class="form-label">Founder Name *</label>
+                                    <input type="text" id="founderName" name="founderName" required class="form-input w-full px-4 py-3">
+                                </div>
+                                <div>
+                                    <label for="founderTitle" class="form-label">Title *</label>
+                                    <input type="text" id="founderTitle" name="founderTitle" required class="form-input w-full px-4 py-3" placeholder="e.g., CEO, CTO, Founder">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="founderEmail" class="form-label">Email Address *</label>
+                                    <input type="email" id="founderEmail" name="founderEmail" required class="form-input w-full px-4 py-3">
+                                </div>
+                                <div>
+                                    <label for="founderPhone" class="form-label">Phone Number *</label>
+                                    <input type="tel" id="founderPhone" name="founderPhone" required class="form-input w-full px-4 py-3">
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="founderBackground" class="form-label">Founder Background *</label>
+                                <textarea id="founderBackground" name="founderBackground" rows="4" required class="form-input w-full px-4 py-3" placeholder="Brief background about the founder(s), experience, and expertise..."></textarea>
+                            </div>
+
+                            <div class="mb-8">
+                                <label for="useOfFunds" class="form-label">Use of Funds *</label>
+                                <textarea id="useOfFunds" name="useOfFunds" rows="4" required class="form-input w-full px-4 py-3" placeholder="How will you use the funding? (e.g., product development, hiring, marketing, etc.)"></textarea>
+                            </div>
+
+                            <!-- Review Section -->
+                            <div class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 mb-8">
+                                <h3 class="text-xl font-bold text-white mb-4">Application Summary</h3>
+                                <div id="reviewContent" class="space-y-3 text-gray-300">
+                                    <!-- Review content will be populated by JavaScript -->
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="terms" name="terms" required class="mr-3 w-4 h-4 text-purple-600 bg-gray-700 border-gray-600 rounded focus:ring-purple-500">
+                                    <span class="text-gray-300">I agree to the <a href="#" class="text-purple-400 hover:text-purple-300">Terms of Service</a> and <a href="#" class="text-purple-400 hover:text-purple-300">Privacy Policy</a> *</span>
+                                </label>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <button type="button" onclick="prevStep()" class="px-8 py-3 bg-gray-600 hover:bg-gray-700 rounded-lg text-white font-semibold transition duration-300">
+                                    <i class="fas fa-arrow-left mr-2"></i>Previous
+                                </button>
+                                <button type="submit" id="submitBtn" class="px-8 py-3 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 rounded-lg text-white font-semibold transition duration-300">
+                                    <i class="fas fa-paper-plane mr-2"></i>Submit Application
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div id="successMessage" class="hidden form-card p-8 md:p-12 text-center">
+                        <div class="success-checkmark text-6xl mb-6">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-white mb-4">Application Submitted!</h2>
+                        <p class="text-xl text-gray-300 mb-8">
+                            Thank you for your application. We'll review your submission and get back to you within 2 weeks.
+                        </p>
+                        <div class="space-y-4">
+                            <p class="text-gray-400">What happens next:</p>
+                            <ul class="text-gray-300 space-y-2">
+                                <li><i class="fas fa-clock text-purple-400 mr-2"></i>Initial review within 2 weeks</li>
+                                <li><i class="fas fa-search text-blue-400 mr-2"></i>Technical deep dive if selected</li>
+                                <li><i class="fas fa-handshake text-green-400 mr-2"></i>Investment committee review</li>
+                                <li><i class="fas fa-envelope text-yellow-400 mr-2"></i>Term sheet if approved</li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <a href="INDEX.HTML" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 rounded-lg text-white font-semibold transition duration-300">
+                                Back to Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="funding-form.js"></script>
+</body>
+</html> 
